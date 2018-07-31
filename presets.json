@@ -1,0 +1,11 @@
+{
+  "up": {
+    "default": "nginx mysql workspace phpmyadmin redis php-worker"
+  },
+  "enter": {
+    "default": "workspace"
+  },
+  "new": {
+    "default": "laravel"
+  }
+}
