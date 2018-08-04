@@ -2,10 +2,34 @@
   "up": {
     "default": "nginx mysql workspace phpmyadmin redis php-worker"
   },
+
   "enter": {
     "default": "workspace"
   },
+
   "new": {
-    "default": "laravel"
+    "default": "laravel",
+    "laravel": {
+      "templates": [
+        {
+          "source": "nginx/laravel.conf",
+          "dest": "nginx/sites/{% name %}.conf"
+        },
+        {
+          "source": "php-worker/laravel-worker.conf",
+          "dest": "php-worker/supervisord.d/{% name %}-worker.conf"
+        }
+      ],
+      "install": "composer create-project laravel/laravel ."
+    },
+    "basic": {
+      "templates": [
+        {
+          "source": "nginx/basic.conf",
+          "dest": "nginx/sites/{% name %}.conf"
+        }
+      ],
+      "install": "echo 'hello' > index.html"
+    }
   }
 }

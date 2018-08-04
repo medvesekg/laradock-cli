@@ -22,5 +22,9 @@ class ArgParser:
         subparser_rm = subparsers.add_parser('rm')
         subparser_rm.add_argument("name")
 
+        subparser_dc = subparsers.add_parser('dc')
+        subparser_dc.add_argument("commands", nargs="*")
+
+
     def parse_args(self):
         return self.parser.parse_args()

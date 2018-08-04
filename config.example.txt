@@ -1,3 +1,4 @@
 projects_path = path_to_your_projects_folder
 laradock_path = path_to_your_laradock_folder
 hosts_path = path_to_your_hosts_file
+domain = test

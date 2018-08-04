@@ -4,7 +4,7 @@ from os.path import isfile
 from Commands.Command import Command
 
 
-class Up:
+class Up(Command):
 
     def __init__(self, args, config):
         Command.__init__(self, args, config)
@@ -20,10 +20,3 @@ class Up:
 
         subprocess.run(f"docker-compose up -d {containers}", shell=True, cwd=self.config.get_laradock_path())
 
-    def load_presets(self):
-        if(isfile('presets.json')):
-            with open("presets.json", "r") as file:
-                presets = json.load(file)
-                if "up" in presets:
-                    return presets["up"]
-        return None
